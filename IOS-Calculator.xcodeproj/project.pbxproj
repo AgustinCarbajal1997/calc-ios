@@ -93,10 +93,13 @@
 		9F3C804C2AF5BAA200DAABD0 /* IOS-Calculator */ = {
 			isa = PBXGroup;
 			children = (
-				9F3C807D2AF5BC7900DAABD0 /* Supporting Files */,
 				9F3C804D2AF5BAA200DAABD0 /* AppDelegate.swift */,
+				9F3C80812AF5C12000DAABD0 /* Util */,
+				9F3C80802AF5C11000DAABD0 /* Controller */,
+				9F3C807F2AF5C10800DAABD0 /* View */,
+				9F3C807E2AF5C10200DAABD0 /* Model */,
+				9F3C807D2AF5BC7900DAABD0 /* Supporting Files */,
 				9F3C80562AF5BAA400DAABD0 /* Assets.xcassets */,
-				9F3C80582AF5BAA400DAABD0 /* LaunchScreen.storyboard */,
 			);
 			path = "IOS-Calculator";
 			sourceTree = "<group>";
@@ -124,6 +127,43 @@
 				9F3C805B2AF5BAA400DAABD0 /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9F3C807E2AF5C10200DAABD0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9F3C807F2AF5C10800DAABD0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9F3C80822AF5C15A00DAABD0 /* Launch */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9F3C80802AF5C11000DAABD0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9F3C80812AF5C12000DAABD0 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		9F3C80822AF5C15A00DAABD0 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				9F3C80582AF5BAA400DAABD0 /* LaunchScreen.storyboard */,
+			);
+			path = Launch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
