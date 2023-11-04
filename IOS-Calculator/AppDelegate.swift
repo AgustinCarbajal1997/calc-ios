@@ -16,8 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func setupView(){
         window = UIWindow(frame: UIScreen.main.bounds)
-        let vc = HomeViewController()
-        window?.rootViewController = vc
+        let viewcontroller = HomeViewController()
+        window?.rootViewController = viewcontroller
         window?.makeKeyAndVisible()
     }
 }
