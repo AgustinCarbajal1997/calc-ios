@@ -1,21 +1,24 @@
-//
-//  AppDelegate.swift
-//  IOS-Calculator
-//
-//  Created by Agustin Carbajal on 03/11/2023.
-//
-
 import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
+    var window: UIWindow? // contenedor principal de todas las apps
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        setupView()
+        
         return true
     }
 
+    // MARK - Private methods
+    
+    private func setupView(){
+        window = UIWindow(frame: UIScreen.main.bounds)
+        let vc = HomeViewController()
+        window?.rootViewController = vc
+        window?.makeKeyAndVisible()
+    }
 }
 

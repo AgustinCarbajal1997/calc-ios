@@ -13,6 +13,8 @@
 		9F3C80652AF5BAA500DAABD0 /* IOS_CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3C80642AF5BAA500DAABD0 /* IOS_CalculatorTests.swift */; };
 		9F3C806F2AF5BAA500DAABD0 /* IOS_CalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3C806E2AF5BAA500DAABD0 /* IOS_CalculatorUITests.swift */; };
 		9F3C80712AF5BAA500DAABD0 /* IOS_CalculatorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3C80702AF5BAA500DAABD0 /* IOS_CalculatorUITestsLaunchTests.swift */; };
+		9F3C80872AF5C28600DAABD0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3C80852AF5C28600DAABD0 /* HomeViewController.swift */; };
+		9F3C80882AF5C28600DAABD0 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F3C80862AF5C28600DAABD0 /* HomeViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,8 @@
 		9F3C806A2AF5BAA500DAABD0 /* IOS-CalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IOS-CalculatorUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F3C806E2AF5BAA500DAABD0 /* IOS_CalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOS_CalculatorUITests.swift; sourceTree = "<group>"; };
 		9F3C80702AF5BAA500DAABD0 /* IOS_CalculatorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOS_CalculatorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9F3C80852AF5C28600DAABD0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9F3C80862AF5C28600DAABD0 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +143,7 @@
 		9F3C807F2AF5C10800DAABD0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9F3C80832AF5C23C00DAABD0 /* Home */,
 				9F3C80822AF5C15A00DAABD0 /* Launch */,
 			);
 			path = View;
@@ -147,6 +152,7 @@
 		9F3C80802AF5C11000DAABD0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9F3C80842AF5C24300DAABD0 /* Home */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -164,6 +170,22 @@
 				9F3C80582AF5BAA400DAABD0 /* LaunchScreen.storyboard */,
 			);
 			path = Launch;
+			sourceTree = "<group>";
+		};
+		9F3C80832AF5C23C00DAABD0 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				9F3C80862AF5C28600DAABD0 /* HomeViewController.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		9F3C80842AF5C24300DAABD0 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				9F3C80852AF5C28600DAABD0 /* HomeViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,6 +294,7 @@
 			files = (
 				9F3C805A2AF5BAA400DAABD0 /* LaunchScreen.storyboard in Resources */,
 				9F3C80572AF5BAA400DAABD0 /* Assets.xcassets in Resources */,
+				9F3C80882AF5C28600DAABD0 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F3C804E2AF5BAA200DAABD0 /* AppDelegate.swift in Sources */,
+				9F3C80872AF5C28600DAABD0 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
