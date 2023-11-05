@@ -303,11 +303,20 @@
                         </stackView>
                     </subviews>
                 </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8WP-iO-T4m">
+                    <rect key="frame" x="20" y="192" width="353" height="119.66666666666669"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Yey-E5-w97" secondAttribute="trailing" constant="20" id="59w-ia-ZxA"/>
+                <constraint firstItem="Yey-E5-w97" firstAttribute="top" secondItem="8WP-iO-T4m" secondAttribute="bottom" constant="40" id="CgF-Op-hws"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8WP-iO-T4m" secondAttribute="trailing" constant="20" id="Wo9-sj-ao7"/>
+                <constraint firstItem="8WP-iO-T4m" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="ZQs-b3-s6g"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Yey-E5-w97" secondAttribute="bottom" constant="20" id="d4y-aB-xgD"/>
                 <constraint firstItem="Yey-E5-w97" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="ujq-NX-0K6"/>
             </constraints>
