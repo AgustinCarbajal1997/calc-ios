@@ -10,6 +10,26 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="IOS_Calculator" customModuleProvider="target">
             <connections>
+                <outlet property="number0" destination="sJr-M9-nwu" id="Pia-Tv-VXq"/>
+                <outlet property="number1" destination="bJS-6n-a80" id="Wfg-XA-gFJ"/>
+                <outlet property="number2" destination="NLF-hc-QH3" id="1bu-Ty-z1G"/>
+                <outlet property="number3" destination="Z0O-0A-E1t" id="wNl-6W-j5A"/>
+                <outlet property="number4" destination="rrF-HF-U6j" id="tzm-nR-lsz"/>
+                <outlet property="number5" destination="rV9-CH-9TR" id="2Fp-nm-Rn5"/>
+                <outlet property="number6" destination="xqZ-AQ-Gvx" id="c6a-PY-WCd"/>
+                <outlet property="number7" destination="3Ki-Rh-DJc" id="1yv-Pg-r4L"/>
+                <outlet property="number8" destination="i49-TM-vB6" id="Xew-y2-tgv"/>
+                <outlet property="number9" destination="2nL-Jd-LCy" id="m97-HJ-wEs"/>
+                <outlet property="operatorAC" destination="TKS-j6-tPv" id="Aw8-Ba-Eyj"/>
+                <outlet property="operatorAddition" destination="ICK-GI-v0h" id="1bX-51-92F"/>
+                <outlet property="operatorDecimal" destination="5BG-Fc-Wiz" id="YRu-1X-anz"/>
+                <outlet property="operatorDivision" destination="gfk-Mv-CYe" id="DsG-JI-akp"/>
+                <outlet property="operatorMultiplication" destination="eck-b3-Bxm" id="11O-J3-tlk"/>
+                <outlet property="operatorPercent" destination="UQR-F7-g6w" id="wcu-Ao-rih"/>
+                <outlet property="operatorPlusMinus" destination="SK7-u7-W8x" id="Amy-EG-lvW"/>
+                <outlet property="operatorResult" destination="E0h-qi-pLp" id="6Ys-tj-zKU"/>
+                <outlet property="operatorSubstraction" destination="ZnV-22-Gm1" id="hW8-bl-7Pl"/>
+                <outlet property="resultNumber" destination="8WP-iO-T4m" id="9VC-5E-Shb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
