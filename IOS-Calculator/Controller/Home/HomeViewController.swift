@@ -78,6 +78,28 @@ final class HomeViewController: UIViewController {
           return formatter
       }()
     
+    // Formateo de valores auxiliares totales
+    private let auxTotalFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.groupingSeparator = ""
+        formatter.decimalSeparator = ""
+        formatter.numberStyle = .decimal
+        formatter.maximumIntegerDigits = 100
+        formatter.minimumFractionDigits = 0
+        formatter.maximumFractionDigits = 100
+        return formatter
+    }()
+    
+    // Formateo de valores por pantalla en formato científico
+      private let printScientificFormatter: NumberFormatter = {
+          let formatter = NumberFormatter()
+          formatter.numberStyle = .scientific
+          formatter.maximumFractionDigits = 3
+          formatter.exponentSymbol = "e"
+          return formatter
+      }()
+    
+    
     // MARK: - initializing
     
     init(){
@@ -113,6 +135,7 @@ final class HomeViewController: UIViewController {
         operatorDivision.round()
         
         operatorDecimal.setTitle(kDecimalSeparator, for: .normal)
+        result()
     }
     
     // MARK: - actions
@@ -144,11 +167,57 @@ final class HomeViewController: UIViewController {
     @IBAction func numberDecimalAction(_ sender: UIButton) {
         sender.shine()
     }
-    
-    
     @IBAction func numberAction(_ sender: UIButton) {
         sender.shine()
         print(sender.tag)
+    }
+    
+    // limpia las operaciones
+    private func clear(){
+        operation = .none
+        operatorAC.setTitle("AC", for: .normal)
+        if temp != 0 {
+            temp = 0
+            resultNumber.text = "0"
+        } else {
+            total = 0
+            result() // reinicia la calculadora
+        }
+    }
+    
+    // obtiene el resultado final
+    private func result(){
+        // en el momento que tenemos un enum, podemos ejecutar un switch sobre el mismo
+        
+        switch operation {
+
+        case .none:
+            //no hace nada
+            break
+        case .addition:
+            total = total + temp
+            break
+        case .substraction:
+            total = total - temp
+            break
+        case .multiplication:
+            total = total * temp
+            break
+        case .division:
+            total = total / temp
+            break
+        case .percent:
+            temp = temp / 100
+            total =  temp
+            break
+        }
+        
+        // formateo en pantalla
+        if let currentTotal = auxTotalFormatter.string(from: NSNumber(value: total)), currentTotal.count > kMaxLength {
+            resultNumber.text = printScientificFormatter.string(from: NSNumber(value: total))
+        } else {
+            resultNumber.text = printFormatter.string(from: NSNumber(value: total))
+        }
     }
     
 }
