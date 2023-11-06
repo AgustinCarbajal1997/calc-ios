@@ -41,9 +41,42 @@ final class HomeViewController: UIViewController {
     
     // MARK: - constants
     
+    // normalmente las constantes en swift se nombran con un k al ppio
+    
+    private let kDecimalSeparator = Locale.current.decimalSeparator// es importante porque dependiendo del idioma seteado en el iphone, va a ser una coma o un punto
+    private let kMaxLength = 9 //longitud maxima decimal
+    private let kMaxValue = 999999999 //valor maximo aceptado
+    private let kMinValue = 0.00000001 //valor minimo aceptado
+    
     private enum OperationType{
         case none, addition, substraction, multiplication, division, percent
     }
+    
+    // Formateo de valores auxiliares
+    private let auxFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        let locale = Locale.current
+        formatter.groupingSeparator = "" // le estoy diciendo que no haga la clasica separacion por puntito de 1.000, 10.000, 100.000
+        formatter.decimalSeparator = locale.decimalSeparator
+        formatter.numberStyle = .decimal
+        formatter.maximumIntegerDigits = 100
+        formatter.minimumFractionDigits = 0
+        formatter.maximumFractionDigits = 100
+        return formatter
+    }()
+    
+    // Formateo de valores por pantalla por defecto
+    private let printFormatter: NumberFormatter = {
+          let formatter = NumberFormatter()
+          let locale = Locale.current
+          formatter.groupingSeparator = locale.groupingSeparator // ahora si queremos los separadores 1.000, 10.000, 100.000
+          formatter.decimalSeparator = locale.decimalSeparator
+          formatter.numberStyle = .decimal
+          formatter.maximumIntegerDigits = 9 // maximo total
+          formatter.minimumFractionDigits = 0 // podemos no tener ninguno
+          formatter.maximumFractionDigits = 8 // 8 digitos decimales
+          return formatter
+      }()
     
     // MARK: - initializing
     
@@ -78,6 +111,8 @@ final class HomeViewController: UIViewController {
         operatorSubstraction.round()
         operatorMultiplication.round()
         operatorDivision.round()
+        
+        operatorDecimal.setTitle(kDecimalSeparator, for: .normal)
     }
     
     // MARK: - actions
