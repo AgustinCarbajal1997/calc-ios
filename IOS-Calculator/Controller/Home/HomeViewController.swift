@@ -2,7 +2,7 @@ import UIKit
 
 final class HomeViewController: UIViewController {
 
-    // MARK - Outlets
+    // MARK: - Outlets
     
     //result
     @IBOutlet weak var resultNumber: UILabel!
@@ -33,7 +33,7 @@ final class HomeViewController: UIViewController {
     
     
     
-    // MARK - initializing
+    // MARK: - initializing
     
     init(){
         super.init(nibName: nil, bundle: nil) // si le ponemos nil y nil por defecto se va a asociar al xib que pusimos por defecto para asociar
@@ -43,13 +43,37 @@ final class HomeViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK - life cycle
+    // MARK: - life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
+    
+    // MARK: - actions
 
-
-
+    @IBAction func operationAC(_ sender: Any) {
+    }
+    @IBAction func operationPlusMinus(_ sender: Any) {
+    }
+    @IBAction func operationPercent(_ sender: Any) {
+    }
+    @IBAction func operationDivision(_ sender: Any) {
+    }
+    @IBAction func operationMultiplication(_ sender: Any) {
+    }
+    @IBAction func operationSubstraction(_ sender: Any) {
+    }
+    @IBAction func operationAddition(_ sender: Any) {
+    }
+    @IBAction func operationResult(_ sender: Any) {
+    }
+    @IBAction func numberDecimalAction(_ sender: Any) {
+    }
+    
+    
+    @IBAction func numberAction(_ sender: UIButton) {
+        print(sender.tag)
+    }
+    
 }
