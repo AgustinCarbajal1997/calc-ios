@@ -31,7 +31,19 @@ final class HomeViewController: UIViewController {
     @IBOutlet weak var operatorDivision: UIButton!
     
     
+    // MARK: - variables
     
+    private var total: Double = 0
+    private var temp: Double = 0
+    private var operating: Bool = false
+    private var decimal: Bool = false
+    private var operation: OperationType = .none // cuales son las posibilidades de valores con un enum y la inicializamos en .none (osea no se seleccionó ninguno)
+    
+    // MARK: - constants
+    
+    private enum OperationType{
+        case none, addition, substraction, multiplication, division, percent
+    }
     
     // MARK: - initializing
     
