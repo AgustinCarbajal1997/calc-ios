@@ -96,7 +96,7 @@
                                         <constraint firstAttribute="width" secondItem="gfk-Mv-CYe" secondAttribute="height" multiplier="1:1" id="Bf0-Dc-VUB"/>
                                     </constraints>
                                     <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="/">
+                                    <buttonConfiguration key="configuration" style="plain" title="÷">
                                         <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="35"/>
                                         <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </buttonConfiguration>
@@ -166,7 +166,7 @@
                                         <constraint firstAttribute="width" secondItem="eck-b3-Bxm" secondAttribute="height" multiplier="1:1" id="7JF-MQ-H9Y"/>
                                     </constraints>
                                     <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="x">
+                                    <buttonConfiguration key="configuration" style="plain" title="×">
                                         <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="35"/>
                                         <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </buttonConfiguration>
