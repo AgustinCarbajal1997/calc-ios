@@ -43,7 +43,7 @@ final class HomeViewController: UIViewController {
     
     // normalmente las constantes en swift se nombran con un k al ppio
     
-    private let kDecimalSeparator = Locale.current.decimalSeparator// es importante porque dependiendo del idioma seteado en el iphone, va a ser una coma o un punto
+    private let kDecimalSeparator = Locale.current.decimalSeparator!// es importante porque dependiendo del idioma seteado en el iphone, va a ser una coma o un punto
     private let kMaxLength = 9 //longitud maxima decimal
     private let kMaxValue = 999999999 //valor maximo aceptado
     private let kMinValue = 0.00000001 //valor minimo aceptado
@@ -141,30 +141,61 @@ final class HomeViewController: UIViewController {
     // MARK: - actions
 
     @IBAction func operationAC(_ sender: UIButton) {
+        clear()
         sender.shine()
     }
     @IBAction func operationPlusMinus(_ sender: UIButton) {
+        temp = temp * (-1)
+        resultNumber.text = printFormatter.string(from: NSNumber(value: temp))
         sender.shine()
     }
     @IBAction func operationPercent(_ sender: UIButton) {
+        if operation != .percent {
+            result()
+        }
+        operating = true
+        operation = .percent
+        result()
         sender.shine()
     }
     @IBAction func operationDivision(_ sender: UIButton) {
+        result()
+        operating = true
+        operation = .division
         sender.shine()
     }
     @IBAction func operationMultiplication(_ sender: UIButton) {
+        result()
+        operating = true
+        operation = .multiplication
         sender.shine()
     }
     @IBAction func operationSubstraction(_ sender: UIButton) {
+        result()
+        operating = true
+        operation = .substraction
         sender.shine()
     }
     @IBAction func operationAddition(_ sender: UIButton) {
+        result()
+        operating = true
+        operation = .addition
         sender.shine()
     }
     @IBAction func operationResult(_ sender: UIButton) {
+        result()
         sender.shine()
     }
     @IBAction func numberDecimalAction(_ sender: UIButton) {
+        let currentTemp = auxTotalFormatter.string(from: NSNumber(value: temp))!
+          if resultNumber.text?.contains(kDecimalSeparator) ?? false || (!operating && currentTemp.count >= kMaxLength) {
+              return
+          }
+          
+        resultNumber.text = resultNumber.text! + kDecimalSeparator
+          decimal = true
+          
+          selectVisualOperation()
         sender.shine()
     }
     @IBAction func numberAction(_ sender: UIButton) {
