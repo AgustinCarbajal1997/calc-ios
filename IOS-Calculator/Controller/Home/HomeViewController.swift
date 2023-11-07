@@ -195,12 +195,40 @@ final class HomeViewController: UIViewController {
         resultNumber.text = resultNumber.text! + kDecimalSeparator
           decimal = true
           
-          selectVisualOperation()
+       
         sender.shine()
     }
     @IBAction func numberAction(_ sender: UIButton) {
+        operatorAC.setTitle("C", for: .normal)
+        
+        var currentTemp = auxTotalFormatter.string(from: NSNumber(value: temp))!
+        if !operating && currentTemp.count >= kMaxLength {
+            return
+        }
+        
+        currentTemp = auxFormatter.string(from: NSNumber(value: temp))!
+        
+        // Hemos seleccionado una operación
+        if operating {
+            total = total == 0 ? temp : total
+            resultNumber.text = ""
+            currentTemp = ""
+            operating = false
+        }
+        
+        // Hemos seleccionado decimales
+        if decimal {
+            currentTemp = "\(currentTemp)\(kDecimalSeparator)"
+            decimal = false
+        }
+        
+        let number = sender.tag
+        temp = Double(currentTemp + String(number))!
+        resultNumber.text = printFormatter.string(from: NSNumber(value: temp))
+        
+    
+        
         sender.shine()
-        print(sender.tag)
     }
     
     // limpia las operaciones
@@ -250,5 +278,7 @@ final class HomeViewController: UIViewController {
             resultNumber.text = printFormatter.string(from: NSNumber(value: total))
         }
     }
+    
+
     
 }
