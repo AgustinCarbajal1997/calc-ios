@@ -47,6 +47,7 @@ final class HomeViewController: UIViewController {
     private let kMaxLength = 9 //longitud maxima decimal
     private let kMaxValue = 999999999 //valor maximo aceptado
     private let kMinValue = 0.00000001 //valor minimo aceptado
+    private let kTotal = "total"
     
     private enum OperationType{
         case none, addition, substraction, multiplication, division, percent
@@ -135,6 +136,7 @@ final class HomeViewController: UIViewController {
         operatorDivision.round()
         
         operatorDecimal.setTitle(kDecimalSeparator, for: .normal)
+        total = UserDefaults.standard.double(forKey: kTotal)
         result()
     }
     
@@ -159,25 +161,33 @@ final class HomeViewController: UIViewController {
         sender.shine()
     }
     @IBAction func operationDivision(_ sender: UIButton) {
-        result()
+        if operation != .none {
+                  result()
+              }
         operating = true
         operation = .division
         sender.shine()
     }
     @IBAction func operationMultiplication(_ sender: UIButton) {
-        result()
+        if operation != .none {
+                  result()
+              }
         operating = true
         operation = .multiplication
         sender.shine()
     }
     @IBAction func operationSubstraction(_ sender: UIButton) {
-        result()
+        if operation != .none {
+                  result()
+              }
         operating = true
         operation = .substraction
         sender.shine()
     }
     @IBAction func operationAddition(_ sender: UIButton) {
-        result()
+        if operation != .none {
+                  result()
+              }
         operating = true
         operation = .addition
         sender.shine()
@@ -277,6 +287,8 @@ final class HomeViewController: UIViewController {
         } else {
             resultNumber.text = printFormatter.string(from: NSNumber(value: total))
         }
+        
+        UserDefaults.standard.set(total, forKey: kTotal)
     }
     
 
